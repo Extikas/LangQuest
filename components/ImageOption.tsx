@@ -17,8 +17,8 @@ const ImageOption = ({ image, text, isSelected, onPress }: ImageOptionProps) => 
       ${isSelected ? 'border-[#81D5FE] bg-[#DDF4FE]' : 'border-gray-300'}  
       p-2`}>
       <Image source={{ uri: image }} className="w-[100%] flex-1" resizeMode="contain" />
-      <Text 
-      className={`
+      <Text
+        className={`
       ${isSelected ? 'font-bold text-[#40BEF7]' : 'text-bold font-semibold'}`}>
         {text}
       </Text>
