@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Image, SafeAreaView, StatusBar, Text, View } from 'react-native';
-import question from '../assets/data/oneQuestionWithOption';
+import React, { useState } from 'react';
+import { FlatList, Image, StatusBar, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import ImageOption from '~/components/ImageOption';
+import question from '~/assets/data/oneQuestionWithOption';
 import CustomButton from '~/components/CustomButton';
 
 type Option = {
@@ -20,7 +21,7 @@ export default function Home() {
   return (
     <SafeAreaView className="flex flex-1 items-center justify-center p-3">
       <StatusBar animated barStyle={'light-content'} />
-      <Text className="mb-4 text-center text-2xl font-bold">{question.question}</Text>
+      <Text className="mb-4 text-center text-lg font-bold">{question.question}</Text>
 
       <View className="w-full flex-1 flex-row flex-wrap justify-between gap-2">
         {question.options.map((option) => (

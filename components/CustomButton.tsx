@@ -12,9 +12,9 @@ const CustomButton = ({ text, onPress, disabled = false }: ButtonOptionProps) =>
     <Pressable
       onPress={onPress}
       disabled={disabled}
-      className={`boder-b-4 h-12 items-center justify-center 
-      self-stretch rounded-md 
-      ${disabled ? 'border-gray-400 bg-gray-300' : 'border-[#57A600] bg-[#58CC02]'}`}>
+      className={`h-12 items-center justify-center self-stretch rounded-md border-b-4 border-[#57A600] bg-[#58CC02] ${
+        disabled ? 'border-gray-400 bg-gray-300' : ''
+      }`}>
       <Text className="border-b border-[#fff] text-xl font-bold text-white">{text}</Text>
     </Pressable>
   );
