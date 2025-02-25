@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import { FlatList, Image, StatusBar, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Alert, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ImageOption from '~/components/ImageOption';
-import question from '~/assets/data/oneQuestionWithOption';
-import CustomButton from '~/components/CustomButton';
-
-type Option = {
-  id: string;
-  image: string;
-  text: string;
-};
+import questions from '~/assets/data/MultipleChoiceQuestions';
+import MultipleChoiceQuestion from './MultipleChoiceQuestion';
 
 export default function Home() {
-  const [selected, setSelected] = useState<Option | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Indekas, nurodo dabartini klausima
+  const [currentQuestion, setCurrentQuestion] = useState(questions[currentQuestionIndex]);
 
-  const onButtonPress = () => {
-    console.warn('Pasirinktas atsakymas', selected?.text);
+  useEffect(() => {
+    if (currentQuestionIndex >= questions.length) {
+      // Parodo zinute, kai atsakyti visi klausimai
+      Alert.alert('Sveikiname! ', 'Jus atsakete i visus klausimus');
+      setCurrentQuestionIndex(0);
+    } else {
+      // Nustatome nauja klausima
+      setCurrentQuestion(questions[currentQuestionIndex]);
+    }
+  }, [currentQuestionIndex]);
+
+  const onCorrectAnswer = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
+  };
+
+  const onWrongAnser = () => {
+    Alert.alert('Netiesa! ', 'Bandykite dar karta!');
   };
 
   return (
     <SafeAreaView className="flex flex-1 items-center justify-center p-3">
       <StatusBar animated barStyle={'light-content'} />
-      <Text className="mb-4 text-center text-lg font-bold">{question.question}</Text>
 
-      <View className="w-full flex-1 flex-row flex-wrap justify-between gap-2">
-        {question.options.map((option) => (
-          <ImageOption
-            key={option.id}
-            image={option.image}
-            text={option.text}
-            isSelected={selected?.id === option.id}
-            onPress={() => setSelected(option)}
-          />
-        ))}
-      </View>
-
-      <CustomButton text="Patvirtinti" onPress={onButtonPress} disabled={!selected} />
+      <MultipleChoiceQuestion
+        question={currentQuestion}
+        onCorrectAnswer={onCorrectAnswer}
+        onWrongAnser={onWrongAnser}
+      />
     </SafeAreaView>
   );
 }
