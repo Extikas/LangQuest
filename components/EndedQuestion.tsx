@@ -21,7 +21,6 @@ const EndedQuestion = ({ question, onCorrectAnswer, onWrongAnswer }: EndedQuesti
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <Text className="self-start text-lg font-bold">Išverskite šį sakinį</Text>
         <View className="m-2 mb-0 flex flex-row items-center self-stretch">
-          {/* Image */}
           <Image
             source={{
               uri: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738675454/Boy_qcbv19.png',
@@ -35,7 +34,6 @@ const EndedQuestion = ({ question, onCorrectAnswer, onWrongAnswer }: EndedQuesti
           </View>
         </View>
 
-        {/* Sentance container */}
         <TextInput
           value={input}
           onChangeText={(changedText) => setInput(changedText)}
@@ -45,7 +43,6 @@ const EndedQuestion = ({ question, onCorrectAnswer, onWrongAnswer }: EndedQuesti
           multiline={true}
         />
 
-        {/* Button */}
         <CustomButton text="Patvirtinti" onPress={onButtonPress} disabled={false} />
       </KeyboardAvoidingView>
     </>
