@@ -5,12 +5,14 @@ import questions from '~/assets/data/AllQuestionsData';
 import MultipleChoiceQuestion from './MultipleChoiceQuestion';
 import EndedQuestion from '~/components/EndedQuestion';
 import { QuizQuestion } from '~/types';
+import HeaderComponent from '~/components/HeaderComponent';
 
 export default function Home() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion>(
     questions[currentQuestionIndex]
   );
+  const [lives, setLives] = useState(5);
 
   useEffect(() => {
     if (currentQuestionIndex >= questions.length) {
@@ -26,12 +28,29 @@ export default function Home() {
   };
 
   const onWrongAnswer = () => {
-    Alert.alert('Neteisingas atsakymas, bandykite dar kartą!');
+    if (lives <= 1) {
+      Alert.alert('Jus pralaimejote!', 'Bandykite dar karta!', [
+        { text: 'Bandyti dar karta', onPress: restart },
+      ]);
+      setLives(0);
+    } else {
+      Alert.alert('Neteisingas atsakymas, bandykite dar kartą!');
+      setLives(lives - 1);
+    }
+  };
+
+  const restart = () => {
+    setLives(5);
+    setCurrentQuestionIndex(0);
   };
 
   return (
     <SafeAreaView className="flex flex-1 p-3">
       <StatusBar animated barStyle={'default'} />
+
+      {/* Header */}
+      <HeaderComponent progress={currentQuestionIndex / questions.length} lives={lives} />
+
       {currentQuestion.type === 'MULTIPLE_CHOICE' && (
         <MultipleChoiceQuestion
           question={{

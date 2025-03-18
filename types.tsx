@@ -27,3 +27,7 @@ export type EndedQuestionProps = {
   onCorrectAnswer: () => void;
   onWrongAnswer: () => void;
 };
+
+export type ProgressProps = {
+  progress: number;
+};

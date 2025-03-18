@@ -43,7 +43,7 @@ const EndedQuestion = ({ question, onCorrectAnswer, onWrongAnswer }: EndedQuesti
           multiline={true}
         />
 
-        <CustomButton text="Patvirtinti" onPress={onButtonPress} disabled={false} />
+        <CustomButton text="Patvirtinti" onPress={onButtonPress} disabled={!input} />
       </KeyboardAvoidingView>
     </>
   );
