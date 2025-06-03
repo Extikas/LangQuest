@@ -1,18 +1,20 @@
-# 📱 Kalbų mokymosi žaidimas (sukurtas su Expo + React Native)
+# 📱 Kalbų mokymosi žaidimas (Expo + React Native)
 
-Tai mobilus kalbų mokymosi žaidimas, sukurtas naudojant **Expo**, **React Native** ir Tailwind stiliaus naudotojo sąsają. Žaidimas siūlo įvairius klausimų tipus, progresą bei gyvybių sistemą.
+Tai mobilus kalbų mokymosi žaidimas, sukurtas naudojant **Expo**, **React Native**, `expo-router` ir Tailwind stiliaus sąsają. Vartotojai pasirenka mokymosi lygį ir atsakinėja į klausimus apie žodžius, frazes bei vertimus.
 
 ---
 
 ## 🎮 Funkcionalumas
 
-- 🧠 Klausimų tipai:
-  - Pasirinkimas su nuotraukomis (multiple choice)
-  - Atviro tipo atsakymai (teksto įvedimas)
-- 📸 Vizualūs atsakymai su paveikslėliais
-- ❤️ Gyvybių sistema
-- ⏳ Progreso juosta kiekviename lygyje
-- 📱 Reaguojantis ir švarus dizainas, optimizuotas mobiliesiems įrenginiams
+- 📚 **Lygiai:** Pradedantysis, Pažengęs, Ekspertas
+- 🧠 **Klausimų tipai:**
+  - ✔️ Pasirinkimas su paveikslėliais (multiple choice)
+  - ✔️ Atviro tipo (teksto įvedimas)
+- 📸 Vizualiniai atsakymai (naudojami gyvūnų paveikslėliai)
+- ❤️ Gyvybių sistema (5 gyvybės, klaidos sumažina)
+- 📊 Progreso juosta (pažanga per klausimus)
+- 🌴 Fonas su gyvūnų tematika
+- 🧭 Paprastas lygio pasirinkimo ekranas
 
 ---
 
@@ -21,14 +23,20 @@ Tai mobilus kalbų mokymosi žaidimas, sukurtas naudojant **Expo**, **React Nati
 - [Expo](https://expo.dev/)
 - [React Native](https://reactnative.dev/)
 - [expo-router](https://expo.github.io/router/)
-- Komponentai: `CustomButton`, `ImageOption`, `ProgressBar`, `HeaderComponent`, ir kt.
-- Stilius: Tailwind klasės (`className` per `nativewind` ar panašiai)
+- Tailwind stiliai su `className`
+- Komponentai:
+  - `CustomButton`
+  - `ImageOption`
+  - `EndedQuestion`
+  - `ProgressBar`
+  - `HeaderComponent`
+  - `ChooseLevelScreen`
 
 ---
 
 ## 🚀 Diegimas
 
-1. **Klonuokite šį projektą:**
+1. **Klonuokite projektą:**
    ```bash
    git clone https://github.com/jusu-vardas/jusu-repozitorija.git
    cd jusu-repozitorija

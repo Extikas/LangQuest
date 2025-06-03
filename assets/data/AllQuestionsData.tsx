@@ -1,136 +1,61 @@
 import { QuizQuestion } from '~/types';
 
-const questions: QuizQuestion[] = [
+export const beginnerQuestions: QuizQuestion[] = [
   {
-    id: 'q1',
+    id: 'b1',
     type: 'MULTIPLE_CHOICE',
-    text: "Kur yra 'stiklinė'?",
+    text: "Kur yra 'šuo'?",
     options: [
-      {
-        id: 'option1',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673513/cup_fedcyj.png',
-        text: 'the cup',
-      },
-      {
-        id: 'option2',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673564/Glass_yt1vqc.png',
-        text: 'the glass',
-        correct: true,
-      },
-      {
-        id: 'option3',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673659/Milk_l8xhiv.png',
-        text: 'the milk',
-      },
-      {
-        id: 'option4',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673610/coffee_kdtc06.png',
-        text: 'the coffee',
-      },
+      { id: '1', text: 'el perro', correct: true, image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+      { id: '2', text: 'el gato', image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+      { id: '3', text: 'el pez', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
+      { id: '4', text: 'el pájaro', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
     ],
   },
   {
-    id: 'q5',
+    id: 'b2',
     type: 'OPEN_ENDED',
-    text: 'I am a student',
-    answer: 'As esu studentas',
-  },
-  {
-    id: 'q2',
-    type: 'MULTIPLE_CHOICE', 
-    text: "Kur yra 'kava'?",
-    options: [
-      {
-        id: 'option4',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673610/coffee_kdtc06.png',
-        text: 'the coffee',
-        correct: true,
-      },
-      {
-        id: 'option1',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673513/cup_fedcyj.png',
-        text: 'the cup',
-      },
-      {
-        id: 'option3',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673659/Milk_l8xhiv.png',
-        text: 'the milk',
-      },
-      {
-        id: 'option2',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673564/Glass_yt1vqc.png',
-        text: 'the glass',
-      },
-    ],
-  },
-  {
-    id: 'q6',
-    type: 'OPEN_ENDED',
-    text: 'The car is red',
-    answer: 'Masina yra raudona',
-  },
-  {
-    id: 'q3',
-    type: 'MULTIPLE_CHOICE', 
-    text: "Kur yra 'puodelis'?",
-    options: [
-      {
-        id: 'option3',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673659/Milk_l8xhiv.png',
-        text: 'the milk',
-      },
-      {
-        id: 'option2',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673564/Glass_yt1vqc.png',
-        text: 'the glass',
-      },
-      {
-        id: 'option4',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673610/coffee_kdtc06.png',
-        text: 'the coffee',
-      },
-      {
-        id: 'option1',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673513/cup_fedcyj.png',
-        text: 'the cup',
-        correct: true,
-      },
-    ],
-  },
-  {
-    id: 'q4',
-    type: 'MULTIPLE_CHOICE',
-    text: "Kur yra 'pienas'?",
-    options: [
-      {
-        id: 'option2',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673564/Glass_yt1vqc.png',
-        text: 'the glass',
-      },
-      {
-        id: 'option3',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673659/Milk_l8xhiv.png',
-        text: 'the milk',
-        correct: true,
-      },
-      {
-        id: 'option1',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673513/cup_fedcyj.png',
-        text: 'the cup',
-      },
-      {
-        id: 'option4',
-        image: 'https://res.cloudinary.com/dis6tbci7/image/upload/v1738673610/coffee_kdtc06.png',
-        text: 'the coffee',
-      },
-    ],
-  },
-  {
-    id: 'q7',
-    type: 'OPEN_ENDED',
-    text: 'I enjoy learning languages',
-    answer: 'Man patinka mokytis kalbu',
+    text: 'Katė yra ant sofos',
+    answer: 'El gato está en el sofá',
   },
 ];
 
-export default questions;
+export const intermediateQuestions: QuizQuestion[] = [
+  {
+    id: 'i1',
+    type: 'MULTIPLE_CHOICE',
+    text: "Kur yra 'dramblys'?",
+    options: [
+      { id: '1', text: 'el león', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
+      { id: '2', text: 'el elefante', correct: true, image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+      { id: '3', text: 'la jirafa', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
+      { id: '4', text: 'el mono', image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+    ],
+  },
+  {
+    id: 'i2',
+    type: 'OPEN_ENDED',
+    text: 'Man patinka gyvūnai',
+    answer: 'Me gustan los animales',
+  },
+];
+
+export const advancedQuestions: QuizQuestion[] = [
+  {
+    id: 'a1',
+    type: 'MULTIPLE_CHOICE',
+    text: "Kur yra 'krokodilas'?",
+    options: [
+      { id: '1', text: 'el cocodrilo', correct: true, image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+      { id: '2', text: 'la cebra', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
+      { id: '3', text: 'el pingüino', image: 'https://cdn-icons-png.flaticon.com/512/616/616430.png' },
+      { id: '4', text: 'el zorro', image: 'https://cdn-icons-png.flaticon.com/512/616/616408.png' },
+    ],
+  },
+  {
+    id: 'a2',
+    type: 'OPEN_ENDED',
+    text: 'Krokodilas gyvena upėje',
+    answer: 'El cocodrilo vive en el río',
+  },
+];
